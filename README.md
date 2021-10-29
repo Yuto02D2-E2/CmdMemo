@@ -74,15 +74,61 @@ $ git push origin main
 
 ## Linux Command
 ```bash
-$ man <command name>
-$ systemctl poweroff/reboot
+
+$ man <command name> # MANual
+$ systemctl poweroff/reboot # SYSTEM ConTroL
 $ systemctl start/stop/restart/reload/status/enable/disable <service>
 $ systemctl daemon-reload
-$ sudo su <user name> # user name:root, hoge
+$ sudo su <user-name:root/hoge> # Switch User
+
+# check
+$ htop
+$ lscpu
+$ uname -a
+
+# network
+$ ip addr/ipconfig/ifconfig
+$ ssh # Secure SHell
+$ scp # Ssh CoPy
+$ ping
+
+# file
+$ chmod u/g/o/a +/-/= <permission> <file name> # CHange MODe
+
+# tool
+$ grep hoge
+
+
 ```
 
 <br><br>
 
-## - References
+## Vi Command
+```vim
+
+:wq! # Write/Quit/force
+:u # Undo
+:redo
+:set <hoge>
+:/%s/hoge/fuga/gc # swap string
+
+# search
+/hoge # next -> n/N
+/\vhoge # use regular expression
+
+
+h/j/k/l # move cursor (left/down/up/right)
+V # visual mode (select line)
+o/O
+p/P
+i
+I
+a
+A
+```
+
+<br><br>
+
+## References
 - [Git docs](https://git-scm.com/docs)
 - [GitHub docs](https://docs.github.com/ja/github)
