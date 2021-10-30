@@ -52,7 +52,6 @@ $ git status
 $ git diff
 $ git show <hash-value>
 $ git rm -f <file name> # delete file
-$ git
 
 
 # not sure or never used
@@ -79,25 +78,32 @@ $ man <command name> # MANual
 $ systemctl poweroff/reboot # SYSTEM ConTroL
 $ systemctl start/stop/restart/reload/status/enable/disable <service>
 $ systemctl daemon-reload
-$ sudo su <user-name:root/hoge> # Switch User
+$ su <user-name:root/hoge> # Switch User
 
-# check
+# check info
 $ htop
 $ lscpu
 $ uname -a
 
 # network
 $ ip addr/ipconfig/ifconfig
+$ ping
+$ netstat
 $ ssh # Secure SHell
 $ scp # Ssh CoPy
-$ ping
 
 # file
+$ touch hoge.txt # make file
+$ mkdir -p hoge-dir/fuga-dir # make directory with parent
+$ rm hoge.txt # delete file
+$ rm -r hoge-dir # delete directory
+$ mv hoge.txt fuga.txt # rename or move file
+$ cp <name:from> <name:to> # CoPy file or directory
 $ chmod u/g/o/a +/-/= <permission> <file name> # CHange MODe
+$ diff hoge.txt fuga.txt
 
 # tool
 $ grep hoge
-
 
 ```
 
@@ -105,26 +111,32 @@ $ grep hoge
 
 ## Vi Command
 ```vim
+" use double quotation to comment out
 
-:wq! # Write/Quit/force
-:u # Undo
+:wq! " Write/Quit/force
+:u " Undo
 :redo
 :set <hoge>
-:/%s/hoge/fuga/gc # swap string
+:/%s/hoge/fuga/gc " swap string
 
-# search
-/hoge # next -> n/N
-/\vhoge # use regular expression
+" search
+/hoge " next/prev -> n/N
+/\vhoge " use regular expression
 
+h/j/k/l " move cursor (left/down/up/right)
+V " visual mode (select line)
+o/O " insert blank line
+p/P " paste
+i/I " switch to insert mode
+a/A
+```
 
-h/j/k/l # move cursor (left/down/up/right)
-V # visual mode (select line)
-o/O
-p/P
-i
-I
-a
-A
+### Tips
+
+```vim
+" write code to .vimrc or set it in command mode
+set nocompatible " turn off compatibility mode
+set backspace=indent,eol,start " enable backspace
 ```
 
 <br><br>
