@@ -50,6 +50,7 @@ $ git commit --amend "new commit message" # reset commit message
 $ git log
 $ git status
 $ git diff
+$ git blame
 $ git show <hash-value>
 $ git rm -f <file name> # delete file
 
@@ -83,12 +84,14 @@ $ su <user-name:root/hoge> # Switch User
 # check info
 $ htop
 $ lscpu
+$ lsb_release -a
 $ uname -a
 
 # network
 $ ip addr/ipconfig/ifconfig
 $ ping
 $ netstat
+$ nslookup
 $ ssh # Secure SHell
 $ scp # Ssh CoPy
 
@@ -101,8 +104,10 @@ $ mv hoge.txt fuga.txt # rename or move file
 $ cp <name:from> <name:to> # CoPy file or directory
 $ chmod u/g/o/a +/-/= <permission> <file name> # CHange MODe
 $ diff hoge.txt fuga.txt
+$ tar
+$ zip/unzip
 
-# tool
+# other
 $ grep hoge
 
 ```
@@ -113,22 +118,49 @@ $ grep hoge
 ```vim
 " use double quotation to comment out
 
+esc " back to normal mode
 :wq! " Write/Quit/force
-:u " Undo
-:redo
-:set <hoge>
-:/%s/hoge/fuga/gc " swap string
+:Tutorial " start vim-tutorial about 30min
+:h <command> " show help
 
 " search
 /hoge " next/prev -> n/N
 /\vhoge " use regular expression
 
+" move
 h/j/k/l " move cursor (left/down/up/right)
-V " visual mode (select line)
-o/O " insert blank line
+ctrl+w h/j/k/l " move focus window
+gg " move cursor to top of file
+M " move cursor to mid of file
+G " move cursor to end of file
+zz " move cursor-pos to center of screen
+:123 " move cursor to line:123
+
+" edit
+i " switch to insert mode
+I/A " switch to insert mode (move cursor to top/end of line)
+v / V / ctrl+v " switch to visual mode
+dd " cut
+yy " copy
 p/P " paste
-i/I " switch to insert mode
-a/A
+o/O " insert blank line and switch to insert mode
+cc " cut and switch to insert mode
+
+" other
+u " Undo
+ctrl+r " Redo
+:!<shell command> " exec shell command
+:sp/vs " split window
+:e <file name> " open other file
+:(vert) diffsplit <file name> " show diff
+:(vert/bo/top) (++close) term " open terminal in vim
+:set <hoge> " set option
+:set <hoge>! " unset option
+:%s/hoge/fuga/gc " swap string
+
+" in vim-terminal
+ctcl+w N " switch to terminal-normal-mode
+
 ```
 
 ### Tips
