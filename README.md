@@ -114,7 +114,7 @@ $ grep hoge
 
 <br><br>
 
-## Vi Command
+## Vim Command
 ```vim
 " use double quotation to comment out
 
@@ -153,7 +153,7 @@ ctrl+r " Redo
 :sp/vs " split window
 :e <file name> " open other file
 :(vert) diffsplit <file name> " show diff
-:(vert/bo/top) (++close) term " open terminal in vim
+:(vert/bo/top/tab) term (++close/++noclose) " open terminal in vim
 :set <hoge> " set option
 :set <hoge>! " unset option
 :%s/hoge/fuga/gc " swap string
@@ -167,8 +167,15 @@ ctcl+w N " switch to terminal-normal-mode
 
 ```vim
 " write code to .vimrc or set it in command mode
+" (1) if you cant use backspace key
 set nocompatible " turn off compatibility mode
 set backspace=indent,eol,start " enable backspace
+
+" (2) if you got format error [E492/E488]
+set fileformat=unix/dos/max
+
+" (3) copy&paste mode?
+set paste
 ```
 
 <br><br>
